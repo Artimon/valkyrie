@@ -1,0 +1,25 @@
+ _   __     ____            _
+| | / /__ _/ / /____ ______(_)__
+| |/ / _ `/ /  '_/ // / __/ / -_)
+|___/\_,_/_/_/\_\\_, /_/ /_/\__/
+                /___/
+
+/******************************************************************
+ * Using Valkyrie
+ *****************************************************************/
+
+// Getting started with Valkyrie is really simple.
+// Just place the valkyrie/ directory somewhere in your project and
+// include the Autoload.php file.
+
+require_once './ext/valkyrie/valkyrie/Autoload.php';
+
+// Now you are ready to set your autoload options.
+
+Valkyrie_Autoloader::create()
+	->setScriptGroup('temp')					// Pass your current route for example.
+	->setBuildPath(__DIR__ . '/source/build')	// Script-group file will be generated here.
+	->addSourcePath(__DIR__ . '/source/lib')	// That's where your class files are.
+	->addSourcePath(__DIR__ . '/ext/project')	// Maybe another source path?
+	->lowerCasePaths()							// All folders are lower case.
+	->start();
